@@ -5,11 +5,20 @@ class Cliente {
 
 class ContaCorrente{
   agencia;
-  saldo;
+  // #saldo = 0//
+  //o atributo com underline, significa que ele só pode ser acessado de dentro da classe//
+  _saldo = 0;
 
   sacar(valor){
-    if(this.saldo >= valor){
-      this.saldo -=valor;
+    if(this._saldo >= valor){
+      this._saldo -=valor;
+    }
+  }
+
+  depositar(valor){
+    if(valor > 0){
+      this._saldo += valor;
+      console.log(this._saldo);
     }
   }
 }
@@ -25,17 +34,10 @@ cliente2.nome = "Larisse";
 cliente2.cpf = 88822233309;
 
 const contaCorrenteGabriel = new ContaCorrente();
-contaCorrenteGabriel.saldo = 0;
 contaCorrenteGabriel.agencia = 1001;
 
-console.log(contaCorrenteGabriel.saldo);
-contaCorrenteGabriel.saldo = 100;
-console.log(contaCorrenteGabriel.saldo);
+contaCorrenteGabriel.depositar(100);
+contaCorrenteGabriel.depositar(100);
 contaCorrenteGabriel.sacar(50);
 
-
-
-
-console.log(contaCorrenteGabriel.saldo);
-console.log(cliente1);
-console.log(cliente2);
+console.log(contaCorrenteGabriel);
