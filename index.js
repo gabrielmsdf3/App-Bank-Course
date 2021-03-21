@@ -1,29 +1,5 @@
-class Cliente {
-  nome;
-  cpf;
-}
-
-class ContaCorrente{
-  agencia;
-  // #saldo = 0//
-  //o atributo com underline, significa que ele só pode ser acessado de dentro da classe//
-  _saldo = 0;
-
-  sacar(valor){
-    if(this._saldo >= valor){
-      this._saldo -=valor;
-    }
-  }
-
-  depositar(valor){
-    if(valor > 0){
-      this._saldo += valor;
-      console.log(this._saldo);
-    }
-  }
-}
-
-
+import {Cliente} from "./Cliente.js"
+import {ContaCorrente} from "./ContaCorrente.js"
 
 const cliente1 = new Cliente();
 cliente1.nome = "Gabriel";
@@ -38,6 +14,7 @@ contaCorrenteGabriel.agencia = 1001;
 
 contaCorrenteGabriel.depositar(100);
 contaCorrenteGabriel.depositar(100);
-contaCorrenteGabriel.sacar(50);
+const valorSacado = contaCorrenteGabriel.sacar(50);
 
+console.log(valorSacado);
 console.log(contaCorrenteGabriel);
