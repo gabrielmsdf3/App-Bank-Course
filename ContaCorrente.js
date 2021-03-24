@@ -1,6 +1,8 @@
 import { Cliente } from "./Cliente.js";
 
 export class ContaCorrente{
+  //toda vez que for chamado, ele vai contar, olhe no constructor//
+  static numeroDeContas = 0;
   agencia;
   _cliente;
 
@@ -22,9 +24,12 @@ export class ContaCorrente{
   }
 
 
-  constructor(cliente, agencia){
+  constructor(agencia, cliente){
     this.agencia = agencia;
     this.cliente = cliente;
+    //o this refere-se a algo especifico, ja o ContaCorrente refere-se a todas as contas e todas vez//
+    //que for chamado ele vai contar o numero de contas//
+    ContaCorrente.numeroDeContas += 1
   }
 
 
