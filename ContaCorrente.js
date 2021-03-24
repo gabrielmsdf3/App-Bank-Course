@@ -15,12 +15,8 @@ export class ContaCorrente extends Conta{
   //caso precisar fazer um metodo diferente da classe geral conta, voce declara ela na filha e// 
   //ela sobrepoe a pai no caso o valor da taxa foi alterado//
   sacar(valor){
-    let taxa = 1.1 
-    const valorSacado = taxa * valor;
-    if(this._saldo >= valorSacado){
-      this._saldo -=valorSacado;
-      return valorSacado
-    }
+    let taxa = 1.1 ;
+    return this._sacar(valor, taxa);
   }
 
 }
