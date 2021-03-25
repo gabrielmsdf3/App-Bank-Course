@@ -3,6 +3,9 @@ export class Conta {
     this._saldo = saldoInicial;
     this._cliente = cliente;
     this._agencia = agencia;
+    if(this.constructor == Conta){
+      console.log("VocÊ não deveria instanciar um objeto do tipo conta");
+    }
 }
 
 set cliente(novoValor){
@@ -31,6 +34,7 @@ _sacar(valor, taxa){
     this._saldo -=valorSacado;
     return valorSacado;
   }
+  return 0;
 }
 
 depositar(valor){
